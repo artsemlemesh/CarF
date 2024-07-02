@@ -1,0 +1,16 @@
+authtoken: 4nq9771bPxe8ctg7LKr_2ClH7Y15Zqe4bWLWF9p
+log_level: info
+log: /var/log/ngrok.log
+console_ui: true
+console_ui_color: transparent
+dns_resolver_ips:
+  - 1.1.1.1
+  - 8.8.8.8
+inspect_db_size: 104857600 # 100mb
+web_addr: localhost:4040
+tunnels:
+  my-app:
+    proto: http
+    addr: 3000
+    inspect: false
+    host_header: rewrite
