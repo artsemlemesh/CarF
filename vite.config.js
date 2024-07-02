@@ -6,14 +6,13 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build',
+    sourcemap: false
+
   },
   server: {
     port:3002,
     strictPort: true,
     host: '0.0.0.0'
-  },
-  build: {
-    sourcemap: false
   }
   // server: {
   //   port: 3002,
