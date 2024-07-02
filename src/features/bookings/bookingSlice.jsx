@@ -11,7 +11,7 @@ const initialState = {
 
 
 export const fetchBookings = createAsyncThunk('bookings/fetchBookings', async () => {
-    const response = await fetch('http://127.0.0.1:8000/book/')
+    const response = await fetch('https://carrent-b-715132b3d7ac.herokuapp.com/book/')
     const data = await response.json()
     return data
 })
@@ -21,7 +21,7 @@ export const addNewBooking = createAsyncThunk(
     'bookings/addNewBooking',
     async (formData) => {
         const response = await axios.post(
-            "http://127.0.0.1:8000/book/",
+            "https://carrent-b-715132b3d7ac.herokuapp.com/book/",
             formData,
             {
                 headers: {
