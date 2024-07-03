@@ -1,21 +1,26 @@
 import { useState } from "react";
-import { FaUser, FaEnvelope, FaCalendarAlt, FaCalendarCheck, FaCar } from 'react-icons/fa';
-import {addNewBooking} from '../features/bookings/bookingSlice'
+import {
+  FaUser,
+  FaEnvelope,
+  FaCalendarAlt,
+  FaCalendarCheck,
+  FaCar,
+} from "react-icons/fa";
+import { addNewBooking } from "../features/bookings/bookingSlice";
 import { useDispatch } from "react-redux";
 import Label from "./newForm/Label";
 import Input from "./newForm/InputForm";
 
-
-const RentForm = ({ addBooking }) => {
+const RentForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-      email: '',
-      pick_up_date: '',
-      drop_off_date: '',
-      car_model: '',
+    name: "",
+    email: "",
+    pick_up_date: "",
+    drop_off_date: "",
+    car_model: "",
   });
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,19 +30,15 @@ const RentForm = ({ addBooking }) => {
     });
   };
 
-  const handleSubmit =  (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-     dispatch(addNewBooking(formData))
-    // if (addBooking){
-    //   addBooking(formData)
-    // }
-    // addBooking(formData);
+    dispatch(addNewBooking(formData));
     setFormData({
-      name: '',
-      email: '',
-      pick_up_date: '',
-      drop_off_date: '',
-      car_model: '',
+      name: "",
+      email: "",
+      pick_up_date: "",
+      drop_off_date: "",
+      car_model: "",
     });
   };
 
@@ -136,7 +137,10 @@ const RentForm = ({ addBooking }) => {
           </select>
         </div>
         <div className="w-full md:w-1/3 p-2 flex items-end">
-          <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded">
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 rounded"
+          >
             Book Now
           </button>
         </div>
@@ -144,6 +148,5 @@ const RentForm = ({ addBooking }) => {
     </div>
   );
 };
-
 
 export default RentForm;

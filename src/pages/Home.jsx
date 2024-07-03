@@ -1,31 +1,49 @@
 import { useContext, useEffect, useState } from "react";
 import CarContent from "../components/CarTabs/car-content";
-import FAQ from "../components/FAQ/FAQ";
 import Items from "../components/FAQ/items";
-import InfoHome from "../components/InfoHome";
 import RentForm from "../components/RentForm";
 import Separator from "../components/Separator";
-import TopSlider from "../components/UI/TopSlider";
 import { GlobalContext } from "../GlobalContext";
 import { WobbleCard } from "../components/Aceternity/WobbleCard";
 import { FaCar, FaPhoneAlt, FaRoad } from "react-icons/fa";
 import { InfiniteMovingCards } from "../components/Aceternity/InfiniteCards";
 
-
 const Home = () => {
   const [scrollPercent, setScrollPercent] = useState(0);
-  const { scrollToTop, sectionRefs, isVisible } = useContext(GlobalContext);
+  const { scrollToTop, isVisible } = useContext(GlobalContext);
 
   const items = [
-    { quote: "This service is amazing! I loved every bit of it.", name: "Alice Johnson", title: "CEO, TechCorp" },
-    { quote: "Outstanding experience. Highly recommended.", name: "Bob Smith", title: "CTO, Innovatech" },
-    { quote: "The team was professional and delivered great results.", name: "Carol White", title: "Manager, FinBank" },
-    { quote: "A wonderful experience from start to finish.", name: "David Brown", title: "Director, HealthPlus" },
-    { quote: "Exceptional quality and customer service.", name: "Emily Davis", title: "Owner, ShopEasy" },
-    { quote: "I couldn't be happier with the service provided.", name: "Frank Wilson", title: "Founder, GreenTech" }
+    {
+      quote: "This service is amazing! I loved every bit of it.",
+      name: "Alice Johnson",
+      title: "CEO, TechCorp",
+    },
+    {
+      quote: "Outstanding experience. Highly recommended.",
+      name: "Bob Smith",
+      title: "CTO, Innovatech",
+    },
+    {
+      quote: "The team was professional and delivered great results.",
+      name: "Carol White",
+      title: "Manager, FinBank",
+    },
+    {
+      quote: "A wonderful experience from start to finish.",
+      name: "David Brown",
+      title: "Director, HealthPlus",
+    },
+    {
+      quote: "Exceptional quality and customer service.",
+      name: "Emily Davis",
+      title: "Owner, ShopEasy",
+    },
+    {
+      quote: "I couldn't be happier with the service provided.",
+      name: "Frank Wilson",
+      title: "Founder, GreenTech",
+    },
   ];
-  
-
 
   const handleScrollPercent = () => {
     const howMuchScrolled =
@@ -45,10 +63,6 @@ const Home = () => {
     };
   });
 
-
-
-
-
   return (
     <>
       <div className="fixed top-0 left-0 w-full  ">
@@ -57,8 +71,6 @@ const Home = () => {
           style={{ width: `${scrollPercent}%` }}
         ></div>
       </div>
-      {/* <TopSlider/> */}
-      {/* <InfoHome /> */}
 
       <div className=" p-8">
         <div className="w-3/5 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -87,8 +99,6 @@ const Home = () => {
             </p>
           </WobbleCard>
 
-          {/* </div>
-      <div className="mt-8"> */}
           <WobbleCard containerClassName="w-full" className="text-white">
             <div className="flex flex-col items-center">
               <FaRoad size={80} className="md-4 text-red-500" />
@@ -106,7 +116,6 @@ const Home = () => {
 
       <RentForm />
 
-     
       <Separator />
       <Items />
 

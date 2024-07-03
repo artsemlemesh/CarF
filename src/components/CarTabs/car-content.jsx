@@ -5,7 +5,6 @@ import Cars from "./Cars"
 const CarContent = () => {
 
     const fields = [
-        // { label: "Title", key: "title" },
         { label: "Model", key: "Model" },
         { label: "Mark", key: "Mark" },
         { label: "Year", key: "Year" },
@@ -13,7 +12,6 @@ const CarContent = () => {
         { label: "AC", key: "AC" },
         { label: "Transmission", key: "Transmission" },
         { label: "Fuel", key: "Fuel" },
-        // { label: "Image", key: "image" }
       ];
     
 

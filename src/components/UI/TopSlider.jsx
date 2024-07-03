@@ -42,7 +42,8 @@ const TopSlider = () => {
         ))}
       </ul>
       <label htmlFor="year">year</label>
-      <input className="border"
+      <input
+        className="border"
         name="year"
         type="number"
         value={car.year}
@@ -50,23 +51,30 @@ const TopSlider = () => {
       />
       <label>make</label>
       <input
-      className="border"
-      name="make" type="text" value={car.make} onChange={handleChange} />
+        className="border"
+        name="make"
+        type="text"
+        value={car.make}
+        onChange={handleChange}
+      />
       <label>model</label>
       <input
-       className="border"
+        className="border"
         name="model"
         type="text"
         value={car.model}
         onChange={handleChange}
       />
-      <button className="bg-pink-500 px-4 py-2 text-custom-blue rounded-lg hover:bg-pink-800" onClick={addCar}> add </button>
+      <button
+        className="bg-pink-500 px-4 py-2 text-custom-blue rounded-lg hover:bg-pink-800"
+        onClick={addCar}
+      >
+        {" "}
+        add{" "}
+      </button>
       {/* </form> */}
     </>
   );
 };
 
 export default TopSlider;
-
-
-

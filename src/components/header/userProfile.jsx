@@ -13,7 +13,9 @@ const UserProfile = () => {
       <div className="flex-grow">
         {isAuthenticated ? (
           <>
-            <div className="text-lg font-semibold text-gray-200">{user.name}</div>
+            <div className="text-lg font-semibold text-gray-200">
+              {user.name}
+            </div>
             <p className="text-gray-400">{user.email}</p>
           </>
         ) : (

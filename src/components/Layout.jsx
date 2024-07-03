@@ -1,19 +1,15 @@
-import Footer from "./Footer"
-import Header from "./header/Header"
-import MyRoute from "./Routers"
-
+import Footer from "./Footer";
+import Header from "./header/Header";
+import MyRoute from "./Routers";
 
 const Layout = () => {
+  return (
+    <>
+      <Header />
+      <MyRoute />
+      <Footer />
+    </>
+  );
+};
 
-
-    return (
-        <>
-            <Header/>
-                <MyRoute/>
-            <Footer/>
-        </>
-    )
-}
-
-
-export default Layout
+export default Layout;

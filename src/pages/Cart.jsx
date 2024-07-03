@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import RentForm from "../components/RentForm";
-import { fetchBookings } from '../features/bookings/bookingSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { fetchBookings } from "../features/bookings/bookingSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -9,32 +9,44 @@ const Cart = () => {
   const bookingStatus = useSelector((state) => state.bookings.status);
 
   useEffect(() => {
-    if (bookingStatus === 'idle') {
+    if (bookingStatus === "idle") {
       dispatch(fetchBookings());
     }
   }, [dispatch, bookingStatus]);
 
   let content;
 
-  if (bookingStatus === 'succeeded') {
+  if (bookingStatus === "succeeded") {
     content = (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {bookings.map((booking, index) => (
           <div key={index} className="bg-white p-4 rounded shadow-md">
             <h3 className="text-xl font-semibold mb-2">{booking.carModel}</h3>
-            <p className="text-gray-700"><strong>Name:</strong> {booking.name}</p>
-            <p className="text-gray-700"><strong>Email:</strong> {booking.email}</p>
-            <p className="text-gray-700"><strong>Pick-Up Date:</strong> {booking.pick_up_date}</p>
-            <p className="text-gray-700"><strong>Drop-Off Date:</strong> {booking.drop_off_date}</p>
-            <p className="text-gray-700"><strong>Car Model:</strong> {booking.car_model}</p>
+            <p className="text-gray-700">
+              <strong>Name:</strong> {booking.name}
+            </p>
+            <p className="text-gray-700">
+              <strong>Email:</strong> {booking.email}
+            </p>
+            <p className="text-gray-700">
+              <strong>Pick-Up Date:</strong> {booking.pick_up_date}
+            </p>
+            <p className="text-gray-700">
+              <strong>Drop-Off Date:</strong> {booking.drop_off_date}
+            </p>
+            <p className="text-gray-700">
+              <strong>Car Model:</strong> {booking.car_model}
+            </p>
           </div>
         ))}
       </div>
     );
-  } else if (bookingStatus === 'loading') {
+  } else if (bookingStatus === "loading") {
     content = <div className="text-center">Loading...</div>;
-  } else if (bookingStatus === 'failed') {
-    content = <div className="text-center text-red-500">Failed to load bookings.</div>;
+  } else if (bookingStatus === "failed") {
+    content = (
+      <div className="text-center text-red-500">Failed to load bookings.</div>
+    );
   }
 
   return (

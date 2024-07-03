@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { GlobalContext } from "../../GlobalContext";
 
 const Nav = () => {
-  const { scrollToSection, sectionRefs } = useContext(GlobalContext);
+  const { scrollToSection } = useContext(GlobalContext);
 
   const getLinkClass = (isActive) =>
     isActive
